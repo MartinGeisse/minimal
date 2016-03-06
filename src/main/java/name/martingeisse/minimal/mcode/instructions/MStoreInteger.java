@@ -4,13 +4,16 @@
  * This file is distributed under the terms of the MIT license.
  */
 
-package name.martingeisse.minimal.mcode;
+package name.martingeisse.minimal.mcode.instructions;
+
+import name.martingeisse.minimal.mcode.MInstruction;
+import name.martingeisse.minimal.mcode.MInstructionExecutionContext;
 
 /**
- * Loads the value of a local integer variable and places it onto the integer
- * operand stack.
+ * Pops the top-of-stack value from the integer operand stack and stores
+ * it in a local integer variable.
  */
-public final class MLoadInteger extends MInstruction {
+public final class MStoreInteger extends MInstruction {
 
 	private final int index;
 
@@ -18,7 +21,7 @@ public final class MLoadInteger extends MInstruction {
 	 * Constructor.
 	 * @param index the variable index
 	 */
-	public MLoadInteger(final int index) {
+	public MStoreInteger(final int index) {
 		this.index = index;
 	}
 
@@ -33,7 +36,7 @@ public final class MLoadInteger extends MInstruction {
 	// override
 	@Override
 	public void execute(final MInstructionExecutionContext context) {
-		context.pushInteger(context.loadInteger(index));
+		context.storeInteger(index, context.popInteger());
 	}
 
 }

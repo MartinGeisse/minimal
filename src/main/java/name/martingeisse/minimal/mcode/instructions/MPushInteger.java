@@ -4,7 +4,10 @@
  * This file is distributed under the terms of the MIT license.
  */
 
-package name.martingeisse.minimal.mcode;
+package name.martingeisse.minimal.mcode.instructions;
+
+import name.martingeisse.minimal.mcode.MInstruction;
+import name.martingeisse.minimal.mcode.MInstructionExecutionContext;
 
 /**
  * Pushes a constant integer value onto the integer operand stack.

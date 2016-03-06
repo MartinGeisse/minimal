@@ -4,7 +4,10 @@
  * This file is distributed under the terms of the MIT license.
  */
 
-package name.martingeisse.minimal.mcode;
+package name.martingeisse.minimal.mcode.instructions;
+
+import name.martingeisse.minimal.mcode.MInstructionExecutionContext;
+import name.martingeisse.minimal.mcode.MLabel;
 
 /**
  * Pops the top-of-stack value off the integer operand stack. If the value

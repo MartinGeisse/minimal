@@ -4,7 +4,11 @@
  * This file is distributed under the terms of the MIT license.
  */
 
-package name.martingeisse.minimal.mcode;
+package name.martingeisse.minimal.mcode.instructions;
+
+import name.martingeisse.minimal.mcode.MInstruction;
+import name.martingeisse.minimal.mcode.MInstructionExecutionContext;
+import name.martingeisse.minimal.mcode.NativeFunctionDescriptor;
 
 /**
  * Calls a native function (as seen from the MVM, not necessarily "native" in the sense the JVM
@@ -26,7 +30,7 @@ public final class MNativeCall extends MInstruction {
 	@Override
 	public void execute(final MInstructionExecutionContext context) {
 		int[] arguments = new int[descriptor.getIntegerParameterCount()];
-		for (int i = arguments.length - 1; i >= 0; i++) {
+		for (int i = arguments.length - 1; i >= 0; i--) {
 			arguments[i] = context.popInteger();
 		}
 		int returnValue = context.nativeCall(descriptor, arguments);
