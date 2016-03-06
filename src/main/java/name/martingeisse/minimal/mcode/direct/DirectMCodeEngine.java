@@ -68,6 +68,10 @@ public final class DirectMCodeEngine {
 	 * being executed that wasn't meant for that!
 	 */
 	public void step() {
+		if (pc == code.size()) {
+			stopped = true;
+			return;
+		}
 		final MCodeEntry entry = code.get(pc);
 		pc++;
 		entry.execute(instructionExecutionContext);

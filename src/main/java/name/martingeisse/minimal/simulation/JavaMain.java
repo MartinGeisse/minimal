@@ -15,7 +15,7 @@ import name.martingeisse.minimal.simulation.subject.Subject;
 /**
  *
  */
-public class Main {
+public class JavaMain {
 
 	/**
 	 * The main method.
@@ -24,28 +24,9 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		LwjglWindow window = new LwjglWindow(800, 600);
-//		byte[] code = {
-//			0, 1, 2
-//		};
 		Subject subject = new FullySimulatedSubject(window);
-		
-		/*
-		subject.swapDisplayBuffers();
-		for (int i=0; i<20; i++) {
-			subject.drawCell(i, 0, i);
-		}
-		subject.swapDisplayBuffers();
-		Thread.sleep(5000);
-//		Interpreter interpreter = new FullySimulatedInterpreter();
-//		interpreter.setCode(code);
-//		interpreter.setSubject(subject);
-//		interpreter.run();
- * */
-
-		// simulate
 		Native.subject = subject;
 		Experiment1.main();
-		
 	}
 	
 }
