@@ -8,26 +8,26 @@ package name.martingeisse.minimal.mcode;
 
 /**
  * A jump-like instruction, that is, an instruction that (possibly) transfers
- * control to an {@link MLocation}.
+ * control to an {@link MLabel}.
  */
 public abstract class MJumpLikeInstruction extends MInstruction {
 
-	private final MLocation targetLocation;
+	private final MLabel targetLabel;
 
 	/**
 	 * Constructor.
-	 * @param targetLocation the target location to jump to
+	 * @param targetLabel the target label to jump to
 	 */
-	public MJumpLikeInstruction(final MLocation targetLocation) {
-		this.targetLocation = targetLocation;
+	public MJumpLikeInstruction(final MLabel targetLabel) {
+		this.targetLabel = targetLabel;
 	}
 
 	/**
-	 * Getter method for the targetLocation.
-	 * @return the targetLocation
+	 * Getter method for the targetLabel.
+	 * @return the targetLabel
 	 */
-	public MLocation getTargetLocation() {
-		return targetLocation;
+	public MLabel gettargetLabel() {
+		return targetLabel;
 	}
 	
 }

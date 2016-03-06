@@ -8,24 +8,24 @@ package name.martingeisse.minimal.mcode;
 
 /**
  * Pops the top-of-stack value off the integer operand stack. If the value
- * is nonzero, jumps to the target location, otherwise continues with the
+ * is nonzero, jumps to the target label, otherwise continues with the
  * next instruction.
  */
 public final class MConditionalJump extends MJumpLikeInstruction {
 
 	/**
 	 * Constructor.
-	 * @param targetLocation the target location
+	 * @param targetLabel the target label
 	 */
-	public MConditionalJump(final MLocation targetLocation) {
-		super(targetLocation);
+	public MConditionalJump(final MLabel targetLabel) {
+		super(targetLabel);
 	}
 
 	// override
 	@Override
 	public void execute(final MInstructionExecutionContext context) {
 		if (context.popInteger() != 0) {
-			// TODO
+			context.jump(gettargetLabel());
 		}
 	}
 

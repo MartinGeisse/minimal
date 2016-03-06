@@ -42,4 +42,11 @@ public interface MInstructionExecutionContext {
 	 */
 	public int loadInteger(int index);
 	
+	/**
+	 * Jumps to the specified label.
+	 * 
+	 * @param label the label to jump to
+	 */
+	public void jump(MLabel label);
+	
 }

@@ -8,9 +8,9 @@ package name.martingeisse.minimal.mcode;
 
 
 /**
- * The base class for all M instructions.
+ * The base class for all M instructions. All instances are value objects.
  */
-public abstract class MInstruction {
+public abstract class MInstruction extends MCodeEntry {
 
 	/**
 	 * Executes this instruction.

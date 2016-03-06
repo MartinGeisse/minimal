@@ -7,22 +7,22 @@
 package name.martingeisse.minimal.mcode;
 
 /**
- * Unconditionally jumps to the target location.
+ * Unconditionally jumps to the target label.
  */
 public final class MJump extends MJumpLikeInstruction {
 
 	/**
 	 * Constructor.
-	 * @param targetLocation the target location
+	 * @param targetLabel the target label
 	 */
-	public MJump(final MLocation targetLocation) {
-		super(targetLocation);
+	public MJump(final MLabel targetLabel) {
+		super(targetLabel);
 	}
 
 	// override
 	@Override
 	public void execute(final MInstructionExecutionContext context) {
-		// TODO
+		context.jump(gettargetLabel());
 	}
 
 }
