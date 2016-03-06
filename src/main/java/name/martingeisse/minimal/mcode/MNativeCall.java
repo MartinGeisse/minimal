@@ -6,28 +6,33 @@
 
 package name.martingeisse.minimal.mcode;
 
-import java.lang.reflect.Method;
-
 /**
  * Calls a native function (as seen from the MVM, not necessarily "native" in the sense the JVM
  * uses the word), taking arguments from the operand stacks.
  */
 public final class MNativeCall extends MInstruction {
 
-	private final Method method;
+	private final NativeFunctionDescriptor descriptor;
 
 	/**
 	 * Constructor.
-	 * @param method the method to call
+	 * @param descriptor the descriptor for the native function to call
 	 */
-	public MNativeCall(final Method method) {
-		this.method = method;
+	public MNativeCall(final NativeFunctionDescriptor descriptor) {
+		this.descriptor = descriptor;
 	}
 
 	// override
 	@Override
 	public void execute(final MInstructionExecutionContext context) {
-		// TODO
+		int[] arguments = new int[descriptor.getIntegerParameterCount()];
+		for (int i = arguments.length - 1; i >= 0; i++) {
+			arguments[i] = context.popInteger();
+		}
+		int returnValue = context.nativeCall(descriptor, arguments);
+		if (descriptor.isHasIntegerReturnValue()) {
+			context.pushInteger(returnValue);
+		}
 	}
 
 }

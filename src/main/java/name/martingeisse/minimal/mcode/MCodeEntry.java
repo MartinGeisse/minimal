@@ -14,4 +14,11 @@ package name.martingeisse.minimal.mcode;
  */
 public abstract class MCodeEntry {
 
+	/**
+	 * Executes this entry.
+	 * 
+	 * @param context the context
+	 */
+	public abstract void execute(MInstructionExecutionContext context);
+
 }

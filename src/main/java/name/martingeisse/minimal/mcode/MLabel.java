@@ -15,4 +15,10 @@ package name.martingeisse.minimal.mcode;
  * by another instance with equal properties.
  */
 public final class MLabel extends MCodeEntry {
+
+	// override
+	@Override
+	public void execute(MInstructionExecutionContext context) {
+	}
+	
 }

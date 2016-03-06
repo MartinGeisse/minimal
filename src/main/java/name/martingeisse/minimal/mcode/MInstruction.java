@@ -11,12 +11,4 @@ package name.martingeisse.minimal.mcode;
  * The base class for all M instructions. All instances are value objects.
  */
 public abstract class MInstruction extends MCodeEntry {
-
-	/**
-	 * Executes this instruction.
-	 * 
-	 * @param context the context
-	 */
-	public abstract void execute(MInstructionExecutionContext context);
-	
 }

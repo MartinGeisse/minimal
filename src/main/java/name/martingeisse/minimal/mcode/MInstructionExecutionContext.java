@@ -48,5 +48,15 @@ public interface MInstructionExecutionContext {
 	 * @param label the label to jump to
 	 */
 	public void jump(MLabel label);
-	
+
+	/**
+	 * Calls a native function.
+	 * 
+	 * @param descriptor the descriptor for the function to call
+	 * @param arguments the integer arguments
+	 * @return the function's return value. The returned value should be ignored if the
+	 * descriptor indicates that the function has no return value.
+	 */
+	public int nativeCall(NativeFunctionDescriptor descriptor, int[] arguments);
+
 }
